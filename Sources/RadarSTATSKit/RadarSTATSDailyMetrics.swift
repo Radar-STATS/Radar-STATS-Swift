@@ -13,12 +13,12 @@ public struct RadarSTATSDailyMetrics: RadarSTATSMetrics, Codable {
     public let sharedTeksByUploadDate: Int
     public let sharedDiagnoses: Int
 
-    private let sampleDate: TimeInterval
+    private let sampleDate: Double
     private let sampleDateString: String
 }
 
 extension RadarSTATSDailyMetrics {
     public var date: Date? {
-        return Date(timeIntervalSince1970: self.sampleDate)
+        return Date(timeIntervalSince1970: self.sampleDate / 1000.0)
     }
 }

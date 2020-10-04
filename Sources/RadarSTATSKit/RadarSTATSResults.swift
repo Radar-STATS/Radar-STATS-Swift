@@ -8,7 +8,7 @@
 import Foundation
 
 public struct RadarSTATSResults: Codable {
-    private let extractionDatetime: TimeInterval
+    private let extractionDatetime: Double
     private let extractionDateWithHour: String
 
     public let today: RadarSTATSBaseMetrics
@@ -18,6 +18,6 @@ public struct RadarSTATSResults: Codable {
 
 extension RadarSTATSResults {
     public var extractionDate: Date {
-        return Date(timeIntervalSince1970: self.extractionDatetime)
+        return Date(timeIntervalSince1970: self.extractionDatetime / 1000.0)
     }
 }
