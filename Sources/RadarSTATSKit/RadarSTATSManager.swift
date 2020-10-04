@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RadarSTATSManager {
+public struct RadarSTATSManager {
     private static let endpointURL = URL(string: "https://raw.githubusercontent.com/Radar-STATS/Radar-STATS/master/Data/Resources/Current/RadarCOVID-Report-Summary-Results.json")!
     
     public static func loadResults() throws -> RadarSTATSResults {

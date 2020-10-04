@@ -7,12 +7,17 @@
 
 import Foundation
 
-struct RadarSTATSResults: Codable {
-    let extractionDatetime: TimeInterval
-    let extractionDate: String
-    let extractionDateWithHour: String
+public struct RadarSTATSResults: Codable {
+    private let extractionDatetime: TimeInterval
+    private let extractionDateWithHour: String
 
-    let today: RadarSTATSBaseMetrics
-    let last7Days: RadarSTATSBaseMetrics
-    let dailyResults: [RadarSTATSDailyMetrics]
+    public let today: RadarSTATSBaseMetrics
+    public let last7Days: RadarSTATSBaseMetrics
+    public let dailyResults: [RadarSTATSDailyMetrics]
+}
+
+extension RadarSTATSResults {
+    public var extractionDate: Date {
+        return Date(timeIntervalSince1970: self.extractionDatetime)
+    }
 }

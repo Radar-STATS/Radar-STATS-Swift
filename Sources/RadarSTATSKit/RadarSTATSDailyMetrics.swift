@@ -15,6 +15,12 @@ public struct RadarSTATSDailyMetrics: RadarSTATSMetrics, Codable {
     public let teksPerSharedDiagnosis: Double
     public let sharedDiagnosesPerCovidCase: Double
 
-    public let sampleDate: TimeInterval?
-    public let sampleDateString: String?
+    private let sampleDate: TimeInterval
+    private let sampleDateString: String
+}
+
+extension RadarSTATSDailyMetrics {
+    public var date: Date? {
+        return Date(timeIntervalSince1970: self.sampleDate)
+    }
 }
