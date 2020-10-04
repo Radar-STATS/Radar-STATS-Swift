@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "RadarSTATSKit",
+    name: "Radar-STATS-Swift",
     products: [
         .library(
             name: "RadarSTATSKit",
