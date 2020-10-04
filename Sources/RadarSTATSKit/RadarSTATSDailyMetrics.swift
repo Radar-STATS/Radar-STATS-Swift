@@ -12,8 +12,6 @@ public struct RadarSTATSDailyMetrics: RadarSTATSMetrics, Codable {
     public let sharedTeksByGenerationDate: Int
     public let sharedTeksByUploadDate: Int
     public let sharedDiagnoses: Int
-    public let teksPerSharedDiagnosis: Double
-    public let sharedDiagnosesPerCovidCase: Double
 
     private let sampleDate: TimeInterval
     private let sampleDateString: String
